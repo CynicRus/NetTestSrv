@@ -1,0 +1,36 @@
+{$assertions on}
+
+function NextMethod: string; forward;
+
+function Method: string;
+begin
+  Result := 'met' + NextMethod();
+end;
+
+function NextMethod: string;
+begin
+  Result := 'hod';
+end;
+
+function Int8.NextMethod: string; forward;
+
+function Int8.Method: string;
+begin
+  Result := 'met' + NextMethod();
+end;
+
+function Int8.NextMethod: string;
+begin
+  Result := 'hod';
+end;
+
+var
+  i: Int8 = 123;
+begin
+  Assert(Method() = 'method');
+  WriteLn('Method Forwarding      :: Passed');
+  
+  Assert(i.Method() = 'method');
+  WriteLn('Type Method Forwarding :: Passed');
+end;
+

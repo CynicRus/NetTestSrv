@@ -1,0 +1,33 @@
+procedure MyMethod(i: Int32);
+begin
+  WriteLn(i);
+end;
+
+procedure MyMethod(i: Int32); override;
+begin
+  Write('Integer -> ');
+  inherited();
+end;
+
+function Int64.ToS: string;
+begin
+  Result := IntToStr(Self);
+end;
+
+function Int64.ToS: string; override;
+begin
+  Result := '64' + inherited();
+end;
+
+function IntToStr(i: Int64): string; override;
+begin
+  Result := 'IntToStr -> ' + inherited();
+end;
+
+var
+  i: Int64 = 2;
+begin
+  MyMethod(1);
+  WriteLn(IntToStr(i));
+  WriteLn(i.ToS());
+end;

@@ -1,0 +1,36 @@
+{$X+}
+
+procedure Test;
+begin
+  raise 'Exception 1';
+end;
+
+var
+  Message: String;
+
+begin
+  try
+    try
+      Test();
+    except
+      WriteLn GetExceptionMessage();
+    end;
+
+    raise('Exception 2');
+  except
+    WriteLn GetExceptionMessage();
+  end;
+
+  try
+    try
+      raise Message := 'Exception 3';
+    except
+      if True then
+        raise
+      else
+        raise();
+    end;
+  except
+    WriteLn GetExceptionMessage();
+  end;
+end;

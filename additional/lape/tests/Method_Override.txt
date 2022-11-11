@@ -1,0 +1,3 @@
+Integer -> 1
+IntToStr -> 2
+64IntToStr -> 2

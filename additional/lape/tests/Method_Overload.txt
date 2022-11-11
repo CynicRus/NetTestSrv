@@ -1,0 +1,4 @@
+Integer -> 1
+String -> 2345
+True
+6.7

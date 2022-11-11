@@ -1,0 +1,54 @@
+{$assertions on}
+
+type
+  TRec = record
+    Number: Integer;
+    Str: String;
+  end;
+
+procedure TRec.Inc;
+begin
+  Assert(Self.Number = 1);
+  Assert(Self.Str = '1');
+
+  Self.Number := Self.Number + 1;
+  Self.Str := IntToStr(Self.Number);
+end;
+
+procedure Integer.Next;
+begin
+  Self := Self + 1;
+end;
+
+function GetRec: TRec;
+begin
+  Result := [1, '1'];
+end;
+
+const
+  i: Integer = 0;
+  r: TRec = [1, '1'];
+
+var
+  ii: Integer = 0;
+  rr: TRec = [1, '1'];
+
+begin
+  i.Next();
+  Assert(ToString(i) = '0');
+
+  ii.Next();
+  Assert(ToString(ii) = '1');
+
+  r.Inc();
+
+  Assert(r.Number = 1);
+  Assert(r.Str = '1');
+
+  rr.Inc();
+
+  Assert(rr.Number = 2);
+  Assert(rr.Str = '2');
+
+  GetRec().Inc();
+end;

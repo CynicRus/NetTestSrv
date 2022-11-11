@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="NetTestSrv.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="76" Y="15"/>
+        <UsageCount Value="452"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="200"/>
+        <CursorPos Y="212"/>
+        <UsageCount Value="452"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\ulptypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="12"/>
+        <CursorPos X="29" Y="8"/>
+        <UsageCount Value="451"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\ucustomtypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="19"/>
+        <UsageCount Value="450"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\ulpclasses.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="13"/>
+        <CursorPos X="12" Y="17"/>
+        <UsageCount Value="450"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\ulpclasshelper.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="450"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\umultilang.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="319"/>
+        <CursorPos X="46" Y="320"/>
+        <UsageCount Value="450"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\uplugins.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="483"/>
+        <CursorPos X="5" Y="272"/>
+        <UsageCount Value="450"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\usettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="243"/>
+        <CursorPos X="30" Y="273"/>
+        <UsageCount Value="450"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\import\lptobject.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="lpTObject"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="449"/>
+      </Unit>
+      <Unit>
+        <Filename Value="additional\ffi\lpffiwrappers.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="448"/>
+      </Unit>
+      <Unit>
+        <Filename Value="additional\synapse\synaser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="448"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\userverscript.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="160"/>
+        <CursorPos X="3" Y="172"/>
+        <UsageCount Value="448"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\usettingform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SettingsFrm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="176"/>
+        <CursorPos X="56" Y="132"/>
+        <UsageCount Value="359"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\uabout.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="9"/>
+        <CursorPos X="96" Y="19"/>
+        <UsageCount Value="283"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\uversionsupport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="206"/>
+        <CursorPos Y="3"/>
+        <UsageCount Value="283"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Cynic\AppData\Local\lazarus\onlinepackagemanager\packages\lnet\lazaruspackage\lnetcomponents.pas"/>
+        <UnitName Value="lNetComponents"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="136"/>
+        <CursorPos X="61" Y="48"/>
+        <UsageCount Value="197"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Cynic\AppData\Local\lazarus\onlinepackagemanager\packages\lnet\lib\lnet.pp"/>
+        <UnitName Value="lNet"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="137"/>
+        <CursorPos X="11" Y="74"/>
+        <UsageCount Value="197"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\inc\socketsh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="140"/>
+        <CursorPos X="15" Y="157"/>
+        <UsageCount Value="197"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-extra\src\win\sockets.pp"/>
+        <UnitName Value="Sockets"/>
+        <EditorIndex Value="20"/>
+        <CursorPos X="86" Y="14"/>
+        <UsageCount Value="226"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="additional\lape\lpcompiler.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="3218"/>
+        <CursorPos Y="3234"/>
+        <UsageCount Value="215"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Cynic\AppData\Local\lazarus\onlinepackagemanager\packages\lnet\lib\lcommon.pp"/>
+        <UnitName Value="lCommon"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="46"/>
+        <CursorPos X="85" Y="17"/>
+        <UsageCount Value="225"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\components\lazutils\lazutils.pas"/>
+        <UnitName Value="LazUtils"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="44" Y="20"/>
+        <UsageCount Value="196"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\import\lpjson.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="261"/>
+        <CursorPos X="115" Y="277"/>
+        <UsageCount Value="180"/>
+      </Unit>
+      <Unit>
+        <Filename Value="additional\ffi\ffi.pas"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="82"/>
+        <CursorPos X="13" Y="100"/>
+        <UsageCount Value="209"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\import\lpxml.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="17"/>
+        <CursorPos Y="333"/>
+        <UsageCount Value="180"/>
+      </Unit>
+      <Unit>
+        <Filename Value="additional\lape\lpparser.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="950"/>
+        <CursorPos Y="966"/>
+        <UsageCount Value="178"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\fcl-base\src\inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="410"/>
+        <UsageCount Value="179"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="forms\tcpipcfgform.pas"/>
+        <ComponentName Value="TCPIPForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="18"/>
+        <CursorPos X="18"/>
+        <UsageCount Value="179"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-objpas\src\inc\strutils.pp"/>
+        <UnitName Value="StrUtils"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="2205"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\syspchh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="47" Y="17"/>
+        <UsageCount Value="69"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\win\sysutils.pp"/>
+        <UnitName Value="SysUtils"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="912"/>
+        <CursorPos X="29" Y="917"/>
+        <UsageCount Value="149"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2943"/>
+        <CursorPos Y="2959"/>
+        <UsageCount Value="69"/>
+      </Unit>
+      <Unit>
+        <Filename Value="units\usimplestateworker.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18" Y="3"/>
+        <UsageCount Value="174"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\toolbutton.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="168"/>
+        <CursorPos Y="184"/>
+        <UsageCount Value="6"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\Cynic\AppData\Local\lazarus\onlinepackagemanager\packages\lnet\lib\lhttp.pp"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="121"/>
+        <CursorPos X="3" Y="398"/>
+        <UsageCount Value="140"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="183"/>
+        <CursorPos X="18" Y="190"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="133" Column="5" TopLine="125"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="134" Column="5" TopLine="126"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="135" Column="5" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="136" Column="5" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="137" Column="5" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="138" Column="5" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="137" Column="5" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="136" Column="5" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="135" Column="5" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="136" Column="5" TopLine="128"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="67" Column="27" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="69" Column="28" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="260" Column="16" TopLine="245"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="251" Column="3" TopLine="227"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="25" Column="5" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <Caret Line="238" Column="18" TopLine="214"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus\lcl\dialogs.pp"/>
+        <Caret Line="190" Column="18" TopLine="183"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="278" Column="19" TopLine="256"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="54" Column="19" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="218" Column="34" TopLine="188"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="265" Column="7" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\uabout.pas"/>
+        <Caret Line="9" Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="61" Column="18" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="212" Column="22" TopLine="201"/>
+      </Position>
+      <Position>
+        <Filename Value="units\userverscript.pas"/>
+        <Caret Line="46" Column="22" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="units\userverscript.pas"/>
+        <Caret Line="276" Column="16" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="units\userverscript.pas"/>
+        <Caret Line="42" Column="22" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="units\userverscript.pas"/>
+        <Caret Line="178" Column="9" TopLine="169"/>
+      </Position>
+      <Position>
+        <Filename Value="forms\main.pas"/>
+        <Caret Line="216" Column="22" TopLine="199"/>
+      </Position>
+      <Position>
+        <Filename Value="units\usettings.pas"/>
+        <Caret Line="273" Column="30" TopLine="243"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

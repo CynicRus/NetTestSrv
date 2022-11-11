@@ -1,0 +1,34 @@
+procedure Final;
+var
+  a = 5;
+  b = 0;
+begin
+  try
+  finally
+    Halt();
+  end;
+  WriteLn('one');
+end;
+
+procedure Test;
+var
+  a = 10;
+  b = 0;
+begin
+  try
+    a div b;
+  finally
+    Final();
+    WriteLn('two');
+  end;
+  WriteLn('Nope!');
+end;
+
+begin
+  try
+    Test();
+  except
+    WriteLn('three');
+  end;
+  WriteLn('Nope!');
+end;

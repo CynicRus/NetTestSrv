@@ -1,0 +1,39 @@
+procedure MyMethod(i: Int32); overload;
+begin
+  WriteLn('Integer -> ', i);
+end;
+
+procedure MyMethod(s: string); overload;
+begin
+  WriteLn('String -> ', s);
+end;
+
+function MyMethod: Boolean; overload;
+begin
+  Result := True;
+end;
+
+function string.DoAppend(i: Int32): string; overload;
+begin
+  Result := Self + IntToStr(i);
+end;
+
+function string.DoAppend(s: string): string; overload;
+begin
+  Result := Self + s;
+end;
+
+function IntToStr(a: Int32; b: Int32): string; overload;
+begin
+  Result := IntToStr(a) + '.' + IntToStr(b);
+end;
+
+var
+  s = '23';
+begin
+  MyMethod(1);
+  MyMethod((s := s.DoAppend(4)).DoAppend('5'));
+  WriteLn(MyMethod());
+
+  WriteLn(IntToStr(6, 7));
+end;

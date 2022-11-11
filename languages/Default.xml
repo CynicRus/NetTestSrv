@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language Mail="CynicRus@gmail.com" Name="Default" Count="3" Author="CynicRus" CreationDate="1665692065" ModifiedDate="1665692065">
+  <Form Name="MainForm" Caption="NetTestSrv">
+    <Section Name="TGroupBox">
+      <DataGroupBox Hint="" Caption="Данные:"/>
+      <FunctionListGBox Hint="" Caption="Список функций"/>
+      <ScriptGBox Hint="" Caption="Скрипт"/>
+    </Section>
+    <Section Name="TPageControl">
+      <DataPgControl Hint="" Caption=""/>
+    </Section>
+    <Section Name="TTabSheet">
+      <DataTab Hint="" Caption="Инфо"/>
+      <ScriptTab Hint="" Caption="Скрипт"/>
+    </Section>
+    <Section Name="TMemo">
+      <LogMemo Hint="" Caption=""/>
+    </Section>
+    <Section Name="TTreeView">
+      <FuncListTree Hint="" Caption=""/>
+    </Section>
+    <Section Name="TLabel">
+      <FuncListLbl Hint="" Caption="Функции"/>
+    </Section>
+    <Section Name="TTreeFilterEdit">
+      <FuncListFilter Hint="" Caption=""/>
+    </Section>
+    <Section Name="TSynEdit">
+      <ScriptEdit Hint="" Caption=""/>
+    </Section>
+    <Section Name="TToolBar">
+      <btnBar Hint="" Caption=""/>
+    </Section>
+    <Section Name="TToolButton">
+      <btnExit Hint="" Caption="btnTrExit"/>
+      <Separator Hint="" Caption="Separator"/>
+      <btnTray Hint="" Caption="btnTray"/>
+      <Separator2 Hint="" Caption="Separator2"/>
+      <btnServer Hint="" Caption="btnServer"/>
+      <btnSettings Hint="" Caption="btnSettings"/>
+      <separator3 Hint="" Caption="separator3"/>
+      <btnAbout Hint="" Caption="btnAbout"/>
+    </Section>
+    <Section Name="TStatusBar">
+      <StatusBar1 Hint="" Caption=""/>
+    </Section>
+    <Section Name="TSynPasSyn">
+      <ScriptSyn Hint="" Caption=""/>
+    </Section>
+    <Section Name="TImageList">
+      <BtnList Hint="" Caption=""/>
+    </Section>
+    <Section Name="TTrayIcon">
+      <trIcon Hint="" Caption=""/>
+    </Section>
+    <Section Name="TPopupMenu">
+      <trayMenu Hint="" Caption=""/>
+    </Section>
+    <Section Name="TMenuItem">
+      <btnRestore Hint="" Caption="Развернуть"/>
+      <mnuSeparator Hint="" Caption="&amp;_"/>
+      <btnTrExit Hint="" Caption="Выход"/>
+    </Section>
+  </Form>
+  <Form Name="SettingsFrm" Caption="Настройки">
+    <Section Name="TGroupBox">
+      <ServerGBox Hint="" Caption="Сервер"/>
+      <RedirectGBox Hint="" Caption="Перенаправление"/>
+      <ScriptSettingsBox Hint="" Caption="Скрипт"/>
+      <LanguageGroupBox Hint="" Caption="Язык"/>
+    </Section>
+    <Section Name="TLabel">
+      <ConnectionTypeLbl Hint="" Caption="Конфигурация сервера"/>
+      <Label1 Hint="" Caption="Хост"/>
+      <PortLbl Hint="" Caption="Порт"/>
+      <TypeLbl Hint="" Caption="Тип"/>
+      <ScriptBoxLbl Hint="" Caption="Скрипт"/>
+    </Section>
+    <Section Name="TSpinEdit">
+      <PortEdt Hint="" Caption=""/>
+    </Section>
+    <Section Name="TComboBox">
+      <ServerTypeBox Data="TCP&#xD;&#xA;UDP&#xD;&#xA;" Hint="" Caption=""/>
+      <LanguageBox Hint="" Caption=""/>
+    </Section>
+    <Section Name="TEdit">
+      <IpAddrEdt Hint="" Caption=""/>
+      <ScriptEdt Hint="" Caption=""/>
+    </Section>
+    <Section Name="TButton">
+      <RedirectSettingsBtn Hint="" Caption="Параметры"/>
+      <SetScriptBtn Hint="" Caption="Применить"/>
+      <okBtn Hint="" Caption="Ок"/>
+      <cnclBtn Hint="" Caption="Отмена"/>
+    </Section>
+    <Section Name="TCheckBox">
+      <UseRedirectCHBox Hint="" Caption="Использовать перенаправление"/>
+    </Section>
+    <Section Name="TOpenDialog">
+      <OpenDialog1 Hint="" Caption=""/>
+    </Section>
+  </Form>
+  <Form Name="TCPIPForm" Caption="Параметры">
+    <Section Name="TLabel">
+      <IpAddrLbl Hint="" Caption="Хост"/>
+      <PortLbl Hint="" Caption="Порт"/>
+    </Section>
+    <Section Name="TSpinEdit">
+      <PortEdt Hint="" Caption=""/>
+    </Section>
+    <Section Name="TButton">
+      <okBtn Hint="" Caption="Ок"/>
+    </Section>
+    <Section Name="TEdit">
+      <ipAddrEdit Hint="" Caption=""/>
+    </Section>
+    <Section Name="TCheckBox">
+      <KeepConnectionBox Hint="" Caption="Keep Connection"/>
+    </Section>
+  </Form>
+  <AppStrings>
+    <TestKey Value="TestValue"/>
+  </AppStrings>
+</Language>
