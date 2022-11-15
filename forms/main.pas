@@ -10,10 +10,15 @@ uses
   usettingform, uabout, umultilang,usettings;
 
 type
+  TData = record
+    Text: string;
+  end;
+  PData = ^TData;
   TServerState = (ssStopped = 0, ssRunning = 1);
   TRunningState = (rsInTray = 0, rsOnFocused = 1);
   TRunCommand = (rcExit = 0, rcStartServer = 1, rcStopServer = 2,
-    rcSettings = 3, rcAbout = 4, rcTray = 5, rcNewScript = 6, rcOpenScript = 7, rcSaveScript = 8);
+    rcSettings = 3, rcAbout = 4, rcTray = 5, rcNewScript = 6, rcOpenScript = 7,
+    rcSaveScript = 8, rcClearLog = 9, rcSaveLog = 10);
   { TMainForm }
 
   TMainForm = class(TForm)
@@ -23,12 +28,16 @@ type
     mnuSeparator: TMenuItem;
     btnTrExit: TMenuItem;
     OpenScriptDialog: TOpenDialog;
+    LogSaveDlg: TSaveDialog;
     ScriptSaveDialog: TSaveDialog;
     StatusBar1: TStatusBar;
     separator4: TToolButton;
     newScriptBtn: TToolButton;
     openScriptBtn: TToolButton;
     saveScriptBtn: TToolButton;
+    Separator5: TToolButton;
+    btnClearLog: TToolButton;
+    btnSaveLog: TToolButton;
     trayMenu: TPopupMenu;
     ScriptGBox: TGroupBox;
     LogMemo: TMemo;
@@ -47,7 +56,6 @@ type
     separator3: TToolButton;
     btnAbout: TToolButton;
     trIcon: TTrayIcon;
-    procedure Button1Click(Sender: TObject);
     procedure DataPgControlChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -69,6 +77,10 @@ type
     procedure NewScript();
     procedure LoadScript();
     procedure SaveScript();
+    procedure ClearLog();
+    procedure ClearLogMemo(Data: PtrInt);
+    procedure SaveLogMemo(Data: PtrInt);
+    procedure SaveLog();
   public
     property ServerState: TServerState read FServerState write FServerState;
     property RunningState: TRunningState read FRunningState write FRunningState;
@@ -88,7 +100,7 @@ implementation
 
 
 
-
+{
 procedure TMainForm.Button1Click(Sender: TObject);
 begin
   //DeleteFile(ExpandFileName('~/Library/Preferences/')+'NetTestSrv_script.lp)');
@@ -118,7 +130,7 @@ begin
   end;
   //SettingsFrm.ShowModal;
 end;
-
+ }
 procedure TMainForm.DataPgControlChange(Sender: TObject);
 begin
   if DataPgControl.ActivePageIndex = 1 then
@@ -126,11 +138,13 @@ begin
     newScriptbtn.Visible:=true;
     openScriptBtn.Visible:=true;
     SaveScriptBtn.Visible:=true;
+    separator4.Visible:=true;
   end else
   begin
    newScriptbtn.Visible:=false;
    openScriptBtn.Visible:=false;
    SaveScriptBtn.Visible:=false;
+   separator4.Visible:=false;
   end;
 end;
 
@@ -187,6 +201,8 @@ begin
     7: RunCommand(rcNewScript);
     8: RunCommand(rcOpenScript);
     9: RunCommand(rcSaveScript);
+    10: RunCommand(rcClearLog);
+    11: RunCommand(rcSaveLog);
   end;
 end;
 
@@ -264,7 +280,7 @@ begin
   if ServerState = ssStopped then
     SettingsFrm.ShowModal
   else
-    ShowMessage('ssRunning');
+    ShowMessage('Cannot be performed when script is running!');
 end;
 
 procedure TMainForm.About;
@@ -314,6 +330,54 @@ begin
 
 end;
 
+procedure TMainForm.ClearLog;
+begin
+ if ServerState = ssStopped then
+    ClearLogMemo(0)
+ else
+   Application.QueueAsyncCall(@ClearLogMemo, 0);
+end;
+
+procedure TMainForm.ClearLogMemo(Data: PtrInt);
+begin
+  LogMemo.Lines.BeginUpdate;
+  LogMemo.Lines.Clear;
+  LogMemo.Lines.EndUpdate;
+end;
+
+procedure TMainForm.SaveLogMemo(Data: PtrInt);
+var
+  FilenameData: TData;
+begin
+ try
+  FilenameData := PData(Data)^;
+  LogMemo.Lines.SaveToFile(LogSaveDlg.FileName);
+
+ finally
+   Dispose(PData(Data));
+ end;
+
+end;
+
+procedure TMainForm.SaveLog;
+var
+  FileNameData:PData;
+begin
+ if LogSaveDlg.Execute then
+ begin
+  if ServerState = ssStopped then
+  begin
+    LogMemo.Lines.SaveToFile(LogSaveDlg.FileName);
+  end
+  else
+  begin
+    New(FileNameData);
+    FileNameData^.Text := LogSaveDlg.FileName;
+    Application.QueueAsyncCall(@SaveLogMemo, PtrInt(FileNameData));
+  end;
+ end;
+end;
+
 procedure TMainForm.RunCommand(Command: TRunCommand);
 begin
   case Command of
@@ -326,6 +390,8 @@ begin
     rcNewScript: NewScript;
     rcOpenScript: LoadScript;
     rcSaveScript: SaveScript;
+    rcClearLog: ClearLog;
+    rcSaveLog: SaveLog;
   end;
 end;
 
