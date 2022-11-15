@@ -914,8 +914,9 @@ object MainForm: TMainForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000
     }
-    Left = 297
-    Top = 9
+    OnClick = trIconClick
+    Left = 544
+    Top = 7
   end
   object trayMenu: TPopupMenu
     Left = 659

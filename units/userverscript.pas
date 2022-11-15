@@ -46,6 +46,7 @@ type
     constructor Create(CreateSuspended: boolean);
     destructor Destroy; override;
     procedure Display();
+    procedure ClearOutput();
     procedure GetSocketData(aSocket: TLSocket);
     procedure SendSocketData(const S: string);
     property Parser: TLapeTokenizerBase read FParser;
@@ -62,6 +63,11 @@ procedure Log(Params: PParamArray); cdecl;
 begin
   TScriptableServer(Params^[0]).DisplayString := PlpString(Params^[1])^;
   TScriptableServer(Params^[0]).Display;
+end;
+
+procedure ClearLog(Params: PParamArray); cdecl;
+begin
+  TScriptableServer(Params^[0]).ClearOutput();
 end;
 
 procedure MyWriteLn(Params: PParamArray); cdecl;
@@ -120,6 +126,7 @@ begin
     Compiler.addGlobalMethod('procedure SendData(s: string);',@SendData,self);
     Compiler.addGlobalMethod('procedure _write(s: string); override;', @Log, self);
     Compiler.addGlobalMethod('procedure _writeln; override;', @MyWriteLn, self);
+    Compiler.addGlobalMethod('procedure ClearScriptLog();',@ClearLog,self);
     RegisterLCLClasses(Compiler);
     with DefaultFormatSettings do
     begin
@@ -308,6 +315,11 @@ begin
     MainForm.LogMemo.Lines.Clear;
   end;}
   MainForm.LogMemo.Lines.Add(FDisplayString);
+end;
+
+procedure TScriptableServer.ClearOutput;
+begin
+  MainForm.LogMemo.Lines.Clear();
 end;
 
 procedure TScriptableServer.GetSocketData(aSocket: TLSocket);

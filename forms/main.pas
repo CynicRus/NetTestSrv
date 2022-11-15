@@ -52,6 +52,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure trIconClick(Sender: TObject);
   private
     FServerState: TServerState;
     FRunningState: TRunningState;
@@ -167,6 +168,11 @@ begin
   ScriptEdit.Lines.LoadFromFile(Settings.DataProcessingScript);
 end;
 
+procedure TMainForm.trIconClick(Sender: TObject);
+begin
+ RunCommand(rcTray);
+end;
+
 
 procedure TMainForm.ToolBtnClick(Sender: TObject);
 begin
@@ -239,6 +245,7 @@ begin
   trIcon.Visible := True;
   btnTray.ImageIndex := 2;
   btnTray.Tag := 6;
+
 end;
 
 procedure TMainForm.FromTray;
@@ -262,7 +269,7 @@ end;
 
 procedure TMainForm.About;
 begin
-  ShowAbout('CynicRus@gmail.com', 'CynicRus', 1, 15, 2022);
+  ShowAbout('CynicRus@gmail.com', 'CynicRus', 1, 16, 2022);
 end;
 
 procedure TMainForm.NewScript;
