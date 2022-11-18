@@ -68,6 +68,7 @@ begin
   begin
     Con := TTCPIpConnectionSettings(Settings.ConnectionSettings);
     ServerTypeBox.ItemIndex := Settings.ServerType;
+    Con.ServerType:= Settings.ServerType;
     ipAddrEdt.Text := Con.IPAddr;
     PortEdt.Value := StrToInt(Con.Port);
     ScriptEdt.Text := Settings.DataProcessingScript;
@@ -87,6 +88,7 @@ begin
       Con.IPaddr := ipAddrEdt.Text;
       Con.Port := IntToStr(PortEdt.Value);
       Con.ServerType := ServerTypeBox.ItemIndex;
+      //ChangeConnectionSettings()
       Settings.ServerType := Con.ServerType;
       Settings.Save;
       //Free();
@@ -125,7 +127,7 @@ begin
   with SettingsFrm do
   begin
     Con := TTCPIpConnectionSettings(Settings.ConnectionSettings);
-    ServerTypeBox.ItemIndex := Settings.ServerType;
+    ServerTypeBox.ItemIndex := Con.ServerType;
     ipAddrEdt.Text := Con.IPAddr;
     PortEdt.Value := StrToInt(Con.Port);
     UseRedirectCHBox.Checked:=Settings.UseRedirect;
@@ -143,9 +145,11 @@ end;
 procedure TSettingsFrm.LanguageBoxChange(Sender: TObject);
 begin
   Settings.LangIndex := LanguageBox.ItemIndex;
+  Settings.ServerType:= ServerTypeBox.ItemIndex;
   LanguageManager.ApplyLanguage(Settings.LangIndex);
   LanguageManager.FillComboBox(LanguageBox);
   LanguageBox.ItemIndex := Settings.LangIndex;
+  ServerTypeBox.ItemIndex := Settings.ServerType;
 end;
 
 procedure TSettingsFrm.okBtnClick(Sender: TObject);

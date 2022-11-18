@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Language Mail="CynicRus@gmail.com" Name="Default" Count="3" Author="CynicRus" CreationDate="1665692065" ModifiedDate="1665692065">
+<Language Mail="CynicRus@gmail.com" Name="Русский" Count="3" Author="CynicRus" CreationDate="1665692065" ModifiedDate="1665692065">
   <Form Name="MainForm" Caption="NetTestSrv">
     <Section Name="TGroupBox">
       <DataGroupBox Hint="" Caption="Данные:"/>
