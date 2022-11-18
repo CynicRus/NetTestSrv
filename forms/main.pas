@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
-  ExtCtrls, Menus, SynEdit, SynHighlighterPas, TreeFilterEdit, userverscript,
+  ExtCtrls, Menus, SynEdit, SynHighlighterPas, userverscript,
   usettingform, uabout, umultilang,usettings;
 
 type
@@ -285,7 +285,7 @@ end;
 
 procedure TMainForm.About;
 begin
-  ShowAbout('CynicRus@gmail.com', 'CynicRus', 1, 16, 2022);
+  ShowAbout('CynicRus@gmail.com', 'CynicRus', 1, 17, 2022);
 end;
 
 procedure TMainForm.NewScript;

@@ -665,7 +665,7 @@ object MainForm: TMainForm
     end
     object btnSaveLog: TToolButton
       Tag = 11
-      Left = 361
+      Left = 365
       Top = 2
       Caption = 'btnSaveLog'
       ImageIndex = 11

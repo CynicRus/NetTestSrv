@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils,LConvEncoding, lnet, lptypes, lpvartypes, lpparser, lpcompiler, lputils,
   lpeval, lpinterpreter, lpmessages,
-  typinfo, ffi, lpffi, ulpclasses, uplugins, usettings;
+  typinfo, ffi, lpffi, ulpclasses, uplugins, usettings, udatadumper,uredirectclient;
 
 type
   TServerType = (stTCP = 0, stUDP = 1);
@@ -26,6 +26,8 @@ type
     FProcessedData: string;
     FUsedPlugins: TMPluginsList;
     FSocket: TLConnection;
+    FClient: TRedirectClient;
+    FUseRedirect: boolean;
     procedure OnError(const msg: string; aSocket: TLSocket);
     procedure OnAccept(aSocket: TLSocket);
     procedure OnRecieve(aSocket: TLSocket);
@@ -54,6 +56,7 @@ type
     property DisplayString: string read FDisplayString write FDisplayString;
     property RawData: string read FRawData write FRawData;
     property ProcessedData: string read FProcessedData write FProcessedData;
+    property UseRedirect: boolean read FUseRedirect write FUseRedirect;
 
   end;
 
@@ -88,16 +91,17 @@ type
 begin
   PlpStringArray(result)^ := Explode(PString(Params^[0])^, PString(Params^[1])^);
 end;
+}
 
 procedure lpDumpData(const Params: PParamArray); cdecl;
 begin
-  DumpCustomData(PString(Params^[0])^, PString(Params^[1])^);
+  DumpData(PString(Params^[0])^, PString(Params^[1])^);
 end;
 
-procedure lpGetRecorderId(const Params: PParamArray; const result: Pointer); cdecl;
+procedure lpSimpleDumpData(const Params: PParamArray); cdecl;
 begin
-  PInteger(result)^ := TDataWorker(Params^[0]).getRecorderId();
-end;}
+  SimpleDumpData(PString(Params^[0])^);
+end;
 
 procedure getData(const Params: PParamArray; const Result: Pointer); cdecl;
 begin
@@ -128,6 +132,8 @@ begin
     Compiler.addGlobalMethod('procedure _writeln; override;', @MyWriteLn, self);
     Compiler.addGlobalMethod('procedure ClearScriptLog();',@ClearLog,self);
     RegisterLCLClasses(Compiler);
+    Compiler.addGlobalFunc('procedure DumpData(FileName: string; Data: string);', @lpDumpData);
+    Compiler.addGlobalFunc('procedure SimpleDumpData(Data: string);', @lpSimpleDumpData);
     with DefaultFormatSettings do
     begin
       Compiler.addGlobalVar(DateSeparator, 'DateSeparator');
@@ -135,7 +141,6 @@ begin
     end;
     {Compiler.addGlobalFunc('function ExtractText(Str: string;Delim1, Delim2: char): string;', @lpExtractText);
     Compiler.addGlobalFunc('function Explode(del, str: string): TStringArray;', @lpExplode);
-    Compiler.addGlobalFunc('procedure DumpData(FileName: string; Data: string);', @lpDumpData);
     Compiler.addGlobalFunc('procedure SendCommand(const Data: string);', @lpSendCommand);
     Compiler.addGlobalFunc('function GetRecorderID():integer;',@lpGetRecorderID);}
     Compiler.EndImporting;
@@ -192,7 +197,6 @@ end;
 function TScriptableServer.OnHandleDirective(Sender: TLapeCompiler;
   Directive, Argument: lpString; InPeek, InIgnore: boolean): boolean;
 var
-  Arguments: TStringArray;
   Plugin: TMPlugin;
   i: integer;
 begin
@@ -263,6 +267,11 @@ begin
   FSocket.OnError:=@OnError;
   FSocket.Host:=ConCfg.IPAddr;
   FSocket.Port:=StrToInt(ConCfg.Port);
+  FUseRedirect := Settings.UseRedirect;
+  if (FUseRedirect) then
+   FClient := TRedirectClientFactory.GetInstance(ConCfg.ServerType);
+
+
 
   FUsedPlugins := TMPluginsList.Create();
   try
@@ -304,6 +313,8 @@ begin
   if FSocket.Connected then
    FSocket.Disconnect(true);
   FSocket.Free;
+  if UseRedirect then
+   FClient.Free;
   inherited Destroy;
 end;
 
@@ -379,11 +390,13 @@ begin
         Synchronize(@Display);
         end;
     end;
+  TLTCP(FSocket).CallAction;
 end;
 
 procedure TScriptableServer.SendUDPData(const S: String);
 begin
   TLUDP(FSocket).SendMessage(S);
+  TLUDP(FSocket).CallAction;
 end;
 
 function TScriptableServer.GetModeStr: string;
@@ -419,7 +432,12 @@ begin
     //если же нужно без последующего обнуления, то отправку данных надо делать прям из скрипта с помощью senddata
     if Length(ProcessedData) > 0 then
       begin
-      self.SendSocketData(ProcessedData);
+      if UseRedirect then
+       begin
+        FClient.SendData(ProcessedData);//отправим обработанные данные дальше
+        self.SendSocketData(FClient.GetData());//пульнем ответ в обратку
+       end else
+      self.SendSocketData(ProcessedData);//просто отправляем ответа самого сервера
       //sleep(50);
       ProcessedData := '';
       end;
