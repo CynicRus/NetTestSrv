@@ -254,7 +254,7 @@ begin
   case FServerType of
     stTCP: begin
       FSocket := TLTcp.Create(nil);
-      FSocket.ReuseAddress:=true;
+      TLTcp(FSocket).ReuseAddress:=true;
       TLTcp(FSocket).OnAccept:=@OnAccept;
       end;
     stUDP: begin
